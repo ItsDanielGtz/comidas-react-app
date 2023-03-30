@@ -1,12 +1,14 @@
 import React from 'react';
 import Page from './Page';
 
-export default function MealItemForm ({
-  id
+export default function Input ({
+  label,
+  input,
 }) {
   return (
     <Page
-      id={id}
+      label={label}
+      input={input}
     />
   );
 }

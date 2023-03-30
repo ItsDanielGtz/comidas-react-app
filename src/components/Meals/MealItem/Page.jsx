@@ -1,10 +1,12 @@
 import React from 'react';
 import css from "./MealItem.module.css";
+import MealItemForm from './MealItemForm';
 
 export default function Page ({
   name,
   description,
-  price
+  price,
+  id
 }) {
   return (
     <li className={css.meal}>
@@ -16,7 +18,7 @@ export default function Page ({
       <div className={css.price}>${price.toFixed(2)}</div>
     </div>
     <div>
-
+      <MealItemForm id={id} />
     </div>
   </li>
   );

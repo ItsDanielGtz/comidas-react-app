@@ -4,10 +4,12 @@ import Page from './Page';
 export default function MealItem ({
   name,
   description,
-  price
+  price,
+  id
 }) {
   return (
    <Page
+    id={id}
     name={name}
     description={description}
     price={price}
