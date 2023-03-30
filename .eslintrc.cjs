@@ -17,11 +17,12 @@ module.exports = {
     'react'
   ],
   rules: {
-    semi: [1, "always"],
     "react/jsx-no-target-blank": "off",
+    semi: [1, "always"],
     quotes: "off",
     "eol-last": "off",
     "comma-dangle": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "space-before-function-paren": "off"
   }
 };
