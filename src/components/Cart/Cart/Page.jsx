@@ -2,7 +2,9 @@ import React from 'react';
 import Modal from '../../UI/Modal';
 import css from "./Cart.module.css";
 
-export default function Page () {
+export default function Page ({
+  onCloseCart
+}) {
   const cartItems = [{
     id: "c1",
     name: "Sushi",
@@ -11,7 +13,9 @@ export default function Page () {
   }];
 
   return (
-    <Modal>
+    <Modal
+      onCloseCart={onCloseCart}
+    >
       <ul className={css["cart-items"]}>
         {cartItems.map((item) => (
           <li key={item.id} >{item.name}</li>
@@ -22,7 +26,7 @@ export default function Page () {
         <span>35.62</span>
       </div>
       <div className={css.actions}>
-        <button className={css["button--alt"]} >Close</button>
+        <button className={css["button--alt"]} onClick={onCloseCart} >Close</button>
         <button className={css.button}>Order</button>
       </div>
     </Modal>

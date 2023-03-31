@@ -2,9 +2,11 @@ import React from 'react';
 import css from "./Modal.module.css";
 import { createPortal } from 'react-dom';
 
-function Backdrop () {
+function Backdrop ({
+  onCloseCart
+}) {
   return (
-    <div className={css.backdrop}/>
+    <div className={css.backdrop} onClick={onCloseCart}/>
   );
 }
 
@@ -22,11 +24,12 @@ function ModalOverlay ({
 const portalElement = document.getElementById("overlays");
 
 export default function Page({
-  children
+  children,
+  onCloseCart
 }) {
   return (
     <>
-    {createPortal(<Backdrop/>, portalElement)}
+    {createPortal(<Backdrop onCloseCart={onCloseCart} />, portalElement)}
     {createPortal(<ModalOverlay>{children}</ModalOverlay>, portalElement)}
     </>
   );

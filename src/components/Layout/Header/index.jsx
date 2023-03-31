@@ -1,8 +1,12 @@
 import React from 'react';
 import Page from './Page';
 
-export default function Header () {
+export default function Header ({
+  onShowCart
+}) {
   return (
-    <Page/>
+    <Page
+      onShowCart={onShowCart}
+    />
   );
 }

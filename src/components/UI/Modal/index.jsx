@@ -1,9 +1,11 @@
 import React from 'react';
 import Page from './Page';
 
-export default function Modal({ children }) {
+export default function Modal({ children, onCloseCart }) {
   return (
-    <Page>
+    <Page
+    onCloseCart={onCloseCart}
+    >
       {children}
     </Page>
   );

@@ -1,8 +1,12 @@
 import React from 'react';
 import Page from './Page';
 
-export default function HeaderCartButton () {
+export default function HeaderCartButton ({
+  onShowCart
+}) {
   return (
-    <Page/>
+    <Page
+    onShowCart={onShowCart}
+    />
   );
 }
