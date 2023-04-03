@@ -6,7 +6,8 @@ export default function Page ({
   name,
   description,
   price,
-  id
+  id,
+  addToCartHandler
 }) {
   return (
     <li className={css.meal}>
@@ -18,7 +19,7 @@ export default function Page ({
       <div className={css.price}>${price.toFixed(2)}</div>
     </div>
     <div>
-      <MealItemForm id={id} />
+      <MealItemForm id={id} onAddToCart={addToCartHandler}/>
     </div>
   </li>
   );
