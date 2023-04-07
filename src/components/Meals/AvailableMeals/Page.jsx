@@ -3,7 +3,23 @@ import Card from '../../UI/Card';
 import MealItem from '../MealItem';
 import css from "./AvailableMeals.module.css";
 
-export default function Page ({ mealList }) {
+export default function Page({ mealList, isLoading, httpError }) {
+  if (isLoading) {
+    return (
+      <section className={css.MealsLoading}>
+        <p>Cargando...</p>
+      </section>
+    );
+  }
+
+  if (httpError) {
+    return (
+      <section className={css.MealsError}>
+        <p>{httpError}</p>
+      </section>
+    );
+  }
+
   return (
     <section className={css.meals}>
       <Card>
